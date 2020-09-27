@@ -3,5 +3,11 @@
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.analysis.typeCheckingMode": "basic",
-    "python.venvPath": "${workspaceFolder}/.venv"
+    "python.venvPath": "${workspaceFolder}/.venv",
+    "editor.formatOnSave": true,
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/.venv/lib/python3.8/site-packages"
+    ],
+    "python.formatting.provider": "black",
+    "python.pythonPath": ".venv/bin/python"
 }
