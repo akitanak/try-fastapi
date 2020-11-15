@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date, datetime
 from enum import Enum
 from typing import Optional
@@ -26,19 +26,9 @@ class Priority(Enum):
 
 @dataclass
 class Task:
-    id: UUID
+    id: UUID = field(default_factory=uuid4, init=False)
     task_name: str
-    due_date: Optional[date]
-    priority: Optional[Priority]
-    is_done: bool
-    created_at: datetime
-
-    def __init__(
-        self, task_name: str, due_date: Optional[date], priority: Optional[Priority]
-    ):
-        self.id = uuid4()
-        self.task_name = task_name
-        self.due_date = due_date
-        self.priority = priority
-        self.is_done = False
-        self.created_at = datetime.utcnow()
+    due_date: Optional[date] = field(default=None)
+    priority: Optional[Priority] = field(default=None)
+    is_done: bool = field(default=False, init=False)
+    created_at: datetime = field(default_factory=datetime.utcnow, init=False)
