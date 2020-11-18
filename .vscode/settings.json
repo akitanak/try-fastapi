@@ -9,5 +9,6 @@
         "${workspaceFolder}/.venv/lib/python3.8/site-packages"
     ],
     "python.formatting.provider": "black",
-    "python.pythonPath": ".venv/bin/python"
+    "python.pythonPath": ".venv/bin/python",
+    "python.sortImports.path": "isort"
 }
