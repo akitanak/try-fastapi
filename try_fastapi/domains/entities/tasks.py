@@ -32,6 +32,11 @@ class Task(BaseModel):
     priority: Optional[Priority] = Field(default=None)
     is_done: bool = Field(default=False)
     created_at: datetime = Field(default_factory=datetime.utcnow)
+    updated_at: datetime = Field(default=None)
+
+    def __init__(self, **params):
+        super().__init__(**params)
+        self.updated_at = self.created_at
 
     @validator("task_name")
     def check_task_name_length(cls, task_name: str) -> str:

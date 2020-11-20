@@ -16,6 +16,7 @@ def test_create_task_with_minimum_parameter():
     assert task.priority is None
     assert task.is_done is False
     assert task.created_at is not None
+    assert task.updated_at == task.created_at
 
 
 def test_create_task_with_all_parameter():
@@ -31,6 +32,7 @@ def test_create_task_with_all_parameter():
     assert task.priority == priority
     assert task.is_done is False
     assert task.created_at is not None
+    assert task.updated_at == task.created_at
 
 
 def test_create_task_with_too_long_task_name():
