@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  rdb:
+    image: postgres:13.0
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdatavolume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postfres
+      POSTGRES_USER: postgres
+
+volumes:
+  pgdatavolume: {}
