@@ -21,7 +21,7 @@ def upgrade():
         "tasks",
         sa.Column("id", sa.String(length=36)),
         sa.Column("task_name", sa.String(length=32), nullable=False),
-        sa.Column("due_data", sa.Date(), nullable=True),
+        sa.Column("due_date", sa.Date(), nullable=True),
         sa.Column("priority", sa.String(8), nullable=True),
         sa.Column("is_done", sa.Boolean(), nullable=False),
         sa.Column("created_at", sa.DateTime(), nullable=False),
